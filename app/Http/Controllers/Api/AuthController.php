@@ -27,7 +27,7 @@ class AuthController extends Controller
         $result = $this->authService->login($data);
 
         if (!$result) {
-            return ApiResponse('Invalid credentials', null, 401);
+            return ApiResponse('Invalid credentials', null, 400);
         }
 
         return apiResponse('تم تسجيل الدخول بنجاح', $result, 200);
